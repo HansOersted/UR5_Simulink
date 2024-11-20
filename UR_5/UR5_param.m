@@ -94,7 +94,7 @@ for i = 1:size(dhparams, 1)
     body = rigidBody(bodyName);
     
     % set the joint transform
-    setFixedTransform(joint, [alpha, a, d, theta], 'dh');
+    setFixedTransform(joint, [a, alpha, d, theta], 'dh');
     
     % add the joint to the link
     body.Joint = joint;
