@@ -4,7 +4,7 @@ clc
 
 %% DH convention
 
-% The parameters are from 
+% The parameters are from
 % <Force Estimation in Robotic Manipulators: Modeling, Simulation and Experiments>
 % and <Kinematic and dynamic modelling of UR5 manipulator>
 
@@ -62,8 +62,8 @@ for i = 1:numel(inertias)
     inertiaArray(:, :, i) = inertias{i};
 end
 
-theta_initial_vec = [0.3, 0.2, 0, 0, 0, 0]; % initial angles
-dtheta_initial_vec = [0, 0, 0.04, 0, 0, 0]; % initial angles
+theta_initial_vec = [0, -pi/2, 0, -pi/2, 0, 0]; % initial angles
+dtheta_initial_vec = [0, 0, 0.0, 0, 0, 0]; % initial angles
 
 %% Setup the calculation of C*dq and tau_g in simulink
 
@@ -128,5 +128,6 @@ end
 
 % display
 showdetails(ur5);
-% showdetails(ur5);
-show(ur5);
+
+% display adopting the initial configuration
+show(ur5, theta_initial_vec);
