@@ -62,7 +62,7 @@ for i = 1:numel(inertias)
     inertiaArray(:, :, i) = inertias{i};
 end
 
-theta_initial_vec = [0, -pi/2, 0, -pi/2, 0, 0]; % initial angles
+theta_initial_vec = [0, 0, 0, 0, 0, 0]; % initial angles
 dtheta_initial_vec = [0, 0, 0.0, 0, 0, 0]; % initial angles
 
 %% Setup the calculation of C*dq and tau_g in simulink
@@ -131,3 +131,7 @@ showdetails(ur5);
 
 % display adopting the initial configuration
 show(ur5, theta_initial_vec);
+
+%%
+
+sample_time = 0.02;
